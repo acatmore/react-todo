@@ -47,6 +47,10 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
+
+.commentBox {
+  outline: #eee dotted thick;
+}
  
 .new-task input {
   box-sizing: border-box;

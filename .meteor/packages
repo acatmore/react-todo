@@ -21,3 +21,6 @@ react-meteor-data
 accounts-ui
 accounts-password
 practicalmeteor:mocha
+
+#kadira:blaze-layout
+kadira:flow-router
