@@ -4,6 +4,8 @@ import { check } from 'meteor/check';
  
 export const Tasks = new Mongo.Collection('tasks');
 
+export const Homes = new Mongo.Collection('homes');
+
 if (Meteor.isServer) {
 	//Only Publish tasks that are public or belong to the current user
 	Meteor.publish('tasks', function tasksPublication() {
@@ -13,6 +15,10 @@ if (Meteor.isServer) {
 				{ owner: this.userId },
 			],
 		});
+	});
+
+	Meteor.publish('homes', function homesPublication() {
+		return Homes.find({});
 	});
 }
 
@@ -52,7 +58,7 @@ Meteor.methods({
 			//if the task is private, make sure only the owner can check it off
 			throw new Meteor.Error('not-authorized');
 		}
-		
+
 		Tasks.update(taskId, { $set: {checked: setChecked } });
 	},
 	'tasks.setPrivate'(taskId, setToPrivate) {

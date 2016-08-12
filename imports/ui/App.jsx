@@ -55,6 +55,30 @@ class App extends Component {
         );
       });
   }
+
+
+//router
+
+// FlowRouter.route( '/', {
+//   name: 'main',
+//   action() {
+//     ReactLayout.render( App, {});
+//   }
+// });
+
+// FlowRouter.route( 'home-list', {
+//   name: 'homes-list',
+//   action() {
+//     ReactLayout.render( App, {});
+//   }
+// });
+
+// FlowRouter.route( 'home', {
+//   name: 'home',
+//   action() {
+//     ReactLayout.render( App, {});
+//   }
+// });
  
  //the view
   render() {
@@ -110,3 +134,5 @@ export default createContainer(() => {
     currentUser: Meteor.user(),
   };
 }, App);
+
+console.log(Tasks.find({}).fetch());

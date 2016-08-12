@@ -24,3 +24,4 @@ practicalmeteor:mocha
 
 #kadira:blaze-layout
 kadira:flow-router
+kadira:react-layout
