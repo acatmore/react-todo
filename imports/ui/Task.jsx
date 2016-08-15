@@ -48,11 +48,6 @@ export default class Task extends Component {
       	<span className="text">
       		<strong>{this.props.task.username}</strong>: {this.props.task.text}
       		<br></br>
-      		<div className="commentBox">
-      			<br></br>
-      			Hello, this is a comment box.
-      			<br></br>
-      		</div>
       	</span>
 	  </li>
     );

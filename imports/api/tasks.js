@@ -4,7 +4,6 @@ import { check } from 'meteor/check';
  
 export const Tasks = new Mongo.Collection('tasks');
 
-export const Homes = new Mongo.Collection('homes');
 
 if (Meteor.isServer) {
 	//Only Publish tasks that are public or belong to the current user
@@ -16,12 +15,10 @@ if (Meteor.isServer) {
 			],
 		});
 	});
-
-	Meteor.publish('homes', function homesPublication() {
-		return Homes.find({});
-	});
 }
 
+
+//task related methods
 Meteor.methods({
 	'tasks.insert'(text) {
 		check(text, String);

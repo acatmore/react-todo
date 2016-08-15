@@ -101,6 +101,14 @@ class App extends Component {
 
           {this.props.currentUser ?
           <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
+
+            <p>add your <strong>voice</strong></p>
+            <input 
+              type="file"
+              name="pic"
+              accept="image/*"
+              />
+
             <input 
               type="text"
               ref="textInput"
