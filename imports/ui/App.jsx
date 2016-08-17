@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+import { annyang } from 'annyang';
 
 import { Tasks } from '../api/tasks.js';
  
@@ -54,6 +55,18 @@ class App extends Component {
         />
         );
       });
+  }
+
+  audioCommands() {
+
+    const commands = {'hello :name': helloFunction, 'howdy': helloFunction};
+    const commands2 = {'hi': helloFunction};
+
+    annyang.addCommands(commands);
+    annyang.addCommands(commands2);
+
+    // Start listening, don't restart automatically, stop recognition after first phrase recognized
+    annyang.start({ autoRestart: false, continuous: false });
   }
 
 
@@ -142,5 +155,3 @@ export default createContainer(() => {
     currentUser: Meteor.user(),
   };
 }, App);
-
-console.log(Tasks.find({}).fetch());
